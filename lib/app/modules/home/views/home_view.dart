@@ -58,6 +58,8 @@ class HomeView extends GetView<HomeController> {
     );
   }
 
+  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
   Widget _buildSearchBar() {
     return Container(
       margin: const EdgeInsets.only(top: 16.0),
