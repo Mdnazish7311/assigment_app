@@ -1,0 +1,29 @@
+{
+    "CategoryList": [
+        {
+            "id": 1,
+            "name": "Vegetables",
+            "image": "assets/images/vegetables.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Fruits",
+            "image": "assets/images/fruits.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Fresh Juice Items",
+            "image": "assets/images/juice_item.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Combos",
+            "image": "assets/images/juice_item.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Pure Produced Items",
+            "image": "assets/images/juice_item.jpg"
+        }
+    ]
+}

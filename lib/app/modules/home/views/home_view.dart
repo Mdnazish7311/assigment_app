@@ -1,11 +1,17 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
-import 'package:assignment_app/app/data/model/utility/appcolors.dart';
+import 'package:assignment_app/app/data/utility/appcolors.dart';
+import 'package:assignment_app/app/modules/home/views/widgte/product_list.dart';
+import 'package:assignment_app/app/modules/home/views/widgte/search_widget.dart';
+import 'package:assignment_app/app/modules/productDetails/views/product_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:shimmer/shimmer.dart';
 import '../controllers/home_controller.dart';
+import 'widgte/banner_widget.dart';
+import 'widgte/category_widget.dart';
+import 'widgte/recent_orderd_product.dart';
+import 'widgte/simmer_widget.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -13,18 +19,22 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green,
         leading: Padding(
           padding: EdgeInsets.only(left: 16.0),
-          child: Icon(Icons.person),
+          child: CircleAvatar(
+            radius: 18.r,
+            child: Icon(Icons.person),
+          ),
         ),
         title: Text(
-          'Assignment',
+          'Get_cli Test',
           style: TextStyle(
               fontSize: 16.sp,
               fontWeight: FontWeight.bold,
-              color: Appcolors.whiteColor),
+              color: AppColors.whiteColor),
         ),
         centerTitle: true,
         actions: [
@@ -43,62 +53,33 @@ class HomeView extends GetView<HomeController> {
         padding: EdgeInsets.all(16.w),
         child: Obx(() {
           if (controller.isLoading.value) {
-            return _buildShimmerLoading();
+            return buildShimmerLoading();
           } else {
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildSearchBar(),
-                // Add other components like banner, category list, etc.
-              ],
+            return SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  buildSearchBar(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  buildBanner(),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  buildCategoryList(controller),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  buildHorizontalProductsList(controller),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  buildProductsList(controller),
+                ],
+              ),
             );
           }
-        }),
-      ),
-    );
-  }
-
-  // ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-  Widget _buildSearchBar() {
-    return Container(
-      margin: const EdgeInsets.only(top: 16.0),
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8.0),
-        border: Border.all(color: Colors.black, width: 1.0),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search Here',
-                hintStyle: TextStyle(fontSize: 14.sp, color: Colors.grey),
-                border: InputBorder.none,
-              ),
-            ),
-          ),
-          Icon(Icons.search, color: Colors.grey),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildShimmerLoading() {
-    return Shimmer.fromColors(
-      baseColor: Colors.grey[300]!,
-      highlightColor: Colors.grey[100]!,
-      child: ListView(
-        children: List.generate(5, (index) {
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8.0),
-            child: Container(
-              height: 100,
-              color: Colors.white,
-            ),
-          );
         }),
       ),
     );

@@ -1,0 +1,39 @@
+{
+    "ProductList": [
+        {
+            "id": 1,
+            "name": "Fresh Organic Carrots - 1kg",
+            "weight": "1 kg",
+            "price": "2.99",
+            "image": "assets/images/fruits.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Premium Apple Juice - 500ml",
+            "weight": "500 ml",
+            "price": "1.50",
+            "image": "assets/images/juice_item.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Exotic Fruit Combo - 1.5kg",
+            "weight": "1.5 kg",
+            "price": "5.99",
+            "image": "assets/images/juice_item.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Juicy Organic Tomatoes - 1kg",
+            "weight": "1 kg",
+            "price": "3.49",
+            "image": "assets/images/juice_item.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Juicy Organic Tomatoes - 1kg",
+            "weight": "1 kg",
+            "price": "3.49",
+            "image": "assets/images/juice_item.jpg"
+        }
+    ]
+}
