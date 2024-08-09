@@ -6,7 +6,6 @@ Widget buildSearchBar() {
     margin: const EdgeInsets.only(top: 16.0),
     padding: const EdgeInsets.symmetric(horizontal: 16.0),
     decoration: BoxDecoration(
-      color: Colors.white,
       borderRadius: BorderRadius.circular(8.0),
       border: Border.all(color: Colors.black, width: 1.0),
     ),
@@ -14,7 +13,12 @@ Widget buildSearchBar() {
       children: [
         Expanded(
           child: TextField(
+            style: TextStyle(
+              fontSize: 14.sp,
+              color: Colors.black, // Set the text color to black
+            ),
             decoration: InputDecoration(
+              fillColor: Colors.black,
               hintText: 'Search Here',
               hintStyle: TextStyle(fontSize: 14.sp, color: Colors.black),
               border: InputBorder.none,

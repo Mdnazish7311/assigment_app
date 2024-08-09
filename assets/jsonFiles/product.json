@@ -5,35 +5,40 @@
             "name": "Fresh Organic Carrots - 1kg",
             "weight": "1 kg",
             "price": "2.99",
-            "image": "assets/images/fruits.jpeg"
+            "image": "assets/images/fruits.jpeg",
+            "description": "Enjoy our farm-fresh organic carrots, rich in flavor and nutrients. Perfect for a healthy snack or as an addition to your favorite recipes. Grown without any pesticides or chemicals."
         },
         {
             "id": 2,
             "name": "Premium Apple Juice - 500ml",
             "weight": "500 ml",
             "price": "1.50",
-            "image": "assets/images/juice_item.jpg"
+            "image": "assets/images/1.jpeg",
+            "description": "Quench your thirst with our refreshing Premium Apple Juice. Made from handpicked apples, this 500ml bottle is packed with natural sweetness and no added sugars. Ideal for any time of the day."
         },
         {
             "id": 3,
             "name": "Exotic Fruit Combo - 1.5kg",
             "weight": "1.5 kg",
             "price": "5.99",
-            "image": "assets/images/juice_item.jpg"
+            "image": "assets/images/2.jpeg",
+            "description": "Treat yourself to our Exotic Fruit Combo, a delightful mix of seasonal fruits. This 1.5kg pack includes a variety of fresh, juicy, and flavorful fruits that are perfect for a nutritious snack or dessert."
         },
         {
             "id": 4,
             "name": "Juicy Organic Tomatoes - 1kg",
             "weight": "1 kg",
             "price": "3.49",
-            "image": "assets/images/juice_item.jpg"
+            "image": "assets/images/3.jpeg",
+            "description": "Our Juicy Organic Tomatoes are bursting with flavor and freshness. These vine-ripened tomatoes are grown organically, ensuring the highest quality and taste. Ideal for salads, sauces, or as a snack."
         },
         {
             "id": 5,
             "name": "Juicy Organic Tomatoes - 1kg",
             "weight": "1 kg",
             "price": "3.49",
-            "image": "assets/images/juice_item.jpg"
+            "image": "assets/images/juice_item.jpg",
+            "description": "Our Juicy Organic Tomatoes are bursting with flavor and freshness. These vine-ripened tomatoes are grown organically, ensuring the highest quality and taste. Ideal for salads, sauces, or as a snack."
         }
     ]
 }

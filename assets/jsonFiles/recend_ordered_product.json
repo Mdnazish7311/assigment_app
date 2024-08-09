@@ -1,0 +1,44 @@
+{
+    "RecentOrderedProduct": [
+        {
+            "id": 8,
+            "name": "Crisp Organic Apples - 1kg",
+            "weight": "1 kg",
+            "price": "3.99",
+            "image": "assets/images/fruits.jpeg",
+            "description": "Enjoy our crisp organic apples, full of natural sweetness and perfect for snacking. Grown with care, these apples are free from pesticides, making them a healthy choice for you and your family."
+        },
+        {
+            "id": 9,
+            "name": "Freshly Squeezed Orange Juice - 1L",
+            "weight": "1 L",
+            "price": "2.50",
+            "image": "assets/images/juice_item.jpg",
+            "description": "Experience the zesty freshness of our freshly squeezed orange juice. Made from the juiciest oranges, this 1L bottle is perfect for breakfast or a refreshing drink anytime."
+        },
+        {
+            "id": 10,
+            "name": "Tropical Fruit Medley - 2kg",
+            "weight": "2 kg",
+            "price": "7.99",
+            "image": "assets/images/1.jpeg",
+            "description": "Indulge in our Tropical Fruit Medley, a 2kg pack of assorted tropical fruits. Each bite offers a burst of flavor and nutrients, making it a delightful addition to your diet."
+        },
+        {
+            "id": 11,
+            "name": "Organic Cherry Tomatoes - 500g",
+            "weight": "500 g",
+            "price": "2.49",
+            "image": "assets/images/2.jpeg",
+            "description": "Our Organic Cherry Tomatoes are sweet and juicy, perfect for salads or as a snack. These vine-ripened tomatoes are grown organically, ensuring a burst of natural flavor in every bite."
+        },
+        {
+            "id": 12,
+            "name": "Organic Avocados - 4 pack",
+            "weight": "4 pack",
+            "price": "4.99",
+            "image": "assets/images/juice_item.jpg",
+            "description": "Our Organic Avocados are creamy and delicious, ideal for making guacamole or adding to your favorite dishes. Grown without pesticides, these avocados are a healthy and tasty addition to your meals."
+        }
+    ]
+}

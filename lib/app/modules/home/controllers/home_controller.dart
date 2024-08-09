@@ -1,67 +1,77 @@
 import 'dart:convert';
 
-import 'package:assignment_app/app/modules/home/model/category_model.dart';
-import 'package:assignment_app/app/modules/home/model/product_model.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
+import '../category_model.dart';
+import '../product_model.dart';
+import '../recend_ordered_product_model.dart';
+
 class HomeController extends GetxController {
   var isLoading = true.obs;
-  var productList = <ProductModel>[].obs;
-  var categoriesList =
-      <CategoryModel>[].obs; // for storing data from json to list
+  var productList = <ProductList>[].obs;
+  var categoryList = <CategoryList>[].obs;
+  var recentOrderedProductList = <RecentOrderedProductList>[].obs;
 
   @override
   void onInit() {
     super.onInit();
     loadCategoryData();
     loadProductData();
+    loadRecendOrderedProductData();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  // ***************************** loading data from json file  *****************************8
-
-  void loadProductData() async {
-    await Future.delayed(const Duration(seconds: 5));
-    isLoading(false);
-
+  //  ********************************** Load category data from json file *******************************************************
+  loadCategoryData() async {
     try {
-      final productString =
-          await rootBundle.loadString('assets/jsonFiles/product.json');
-
-      final productData = jsonDecode(productString);
-
-      productList.value = (productData['ProductList'] as List)
-          .map((data) => ProductModel.fromJson(data))
-          .toList();
+      final categoryString =
+          await rootBundle.loadString('assets/jsonFiles/category.json');
+      final categoryData = jsonDecode(categoryString);
+      final data = Category.fromJson(categoryData).categoryList;
+      if (data != null) {
+        categoryList.assignAll(data);
+      }
     } catch (e) {
       rethrow;
     }
   }
 
-  // *******************************************************************************************************
+  // ***************************** loading data from json file  *****************************8
 
-  loadCategoryData() async {
+  void loadProductData() async {
+    isLoading(true);
+
     try {
-      final categoryString =
-          await rootBundle.loadString('assets/jsonFiles/category.json');
+      final productString =
+          await rootBundle.loadString('assets/jsonFiles/product.json');
+      final productData = jsonDecode(productString);
+      final products = Product.fromJson(productData).productList;
 
-      final CategoryData = jsonDecode(categoryString);
-
-      categoriesList.value = (CategoryData['CategoryList'] as List)
-          .map((data) => CategoryModel.fromJson(data))
-          .toList();
+      if (products != null) {
+        productList.assignAll(products);
+      }
     } catch (e) {
-      rethrow;
+    } finally {
+      isLoading(false);
+    }
+  }
+
+  // *************************************************** Load Recent Ordered Product data from json file****************************************************
+
+  void loadRecendOrderedProductData() async {
+    try {
+      final productString = await rootBundle
+          .loadString('assets/jsonFiles/recend_ordered_product.json');
+      final data = jsonDecode(productString);
+
+      final recendOrderedData =
+          RecendOrderedProduct.fromJson(data).recentOrderedProductLists;
+
+      if (recendOrderedData != null) {
+        recentOrderedProductList.assignAll(recendOrderedData);
+      }
+    } catch (e) {
+      // Handle error here
     }
   }
 }

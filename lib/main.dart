@@ -1,4 +1,4 @@
-import 'package:assignment_app/app/modules/home/views/home_view.dart';
+import 'package:assignment_app/app/data/utility/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -24,6 +24,7 @@ void main() {
             appBarTheme: const AppBarTheme(
               backgroundColor: Colors.green,
             ),
+            scaffoldBackgroundColor: AppColors.whiteColor,
             textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
           ),
         );
